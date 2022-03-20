@@ -1,0 +1,78 @@
+{
+	"module":"mruby",
+	"about":"embbed ruby library",
+	"author":"djokersoft",
+	"version":"1.0.0",
+	"depends":[],
+        "static":true,
+                    "priority":0,
+	"system":["linux","android","emscripten","windows"],
+	"src":[
+"src/y.tab.c",
+"src/codegen.c",
+"src/array.c",
+"src/backtrace.c",
+"src/class.c",
+"src/codedump.c",
+"src/compar.c",
+"src/debug.c",
+"src/dump.c",
+"src/enum.c",
+"src/error.c",
+"src/etc.c",
+"src/fmt_fp.c",
+"src/gc.c",
+"src/hash.c",
+"src/init.c",
+"src/kernel.c",
+"src/load.c",
+"src/numeric.c",
+"src/object.c",
+"src/pool.c",
+"src/print.c",
+"src/proc.c",
+"src/range.c",
+"src/state.c",
+"src/string.c",
+"src/symbol.c",
+"src/variable.c",
+"src/version.c",
+"src/vm.c"],
+	"include":[""],
+   	"plataforms":
+	{
+	  "linux":
+	  {
+ 	   "CPP_ARGS":"-Wall -O3 -std=c++11 -fPIC",
+ 	   "CC_ARGS":"-Wall -O3 -std=c99  -fPIC",
+ 	   "LD_ARGS":"-s -lm",
+	   "src":[""],
+	   "include":[""]
+	  },
+	  "windows":
+	  {
+ 	   "CPP_ARGS":"-DPLATFORM_DESKTOP -DGRAPHICS_API_OPENGL_33",
+ 	   "CC_ARGS":"-DPLATFORM_DESKTOP -DGRAPHICS_API_OPENGL_33",
+ 	   "LD_ARGS":"",
+	    "src":[""],
+	    "include":[""]
+	  },
+	  "android":
+	  {
+ 	   "CPP_ARGS":"-Wall -O3 -std=c++11 -fPIC",
+ 	   "CC_ARGS":"-Wall -O2 -std=c99  -fPIC",
+ 	   "LD_ARGS":"-s -lm",
+	    "src":[""],
+	    "include":[""]
+	  },
+	  "emscripten":
+	  {
+	  "template":"",
+ 	   "CPP_ARGS":"-Wall -O3 -std=c++11 -fPIC",
+ 	   "CC_ARGS":"-Wall -O2 -std=c99  -fPIC",
+ 	   "LD_ARGS":"-s",
+	    "src":[""],
+	    "include":[""]
+	  }
+      }
+}

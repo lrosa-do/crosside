@@ -1,0 +1,49 @@
+{
+	"module":"agk",
+	"about":" ",
+	"author":"djokersoft",
+	"version":"1.0.0",
+	"depends":[""],
+        "static":true,
+     "priority":0,
+	"system":["linux","android","emscripten","windows"],
+	"src":[""],
+	"include":["include/bullet","include/Collision"],
+   	"plataforms":
+	{
+	  "linux":
+	  {
+ 	   "CPP_ARGS":"-DIDE_LINUX",
+ 	   "CC_ARGS":"-DIDE_LINUX",
+ 	   "LD_ARGS":"-Wl,-Bstatic  -lglfw3 -Wl,-Bdynamic -lGL -lXt -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lXinerama -lXcursor -lopenal -ludev -ldl -no-pie",
+	   "src":[""],
+	   "include":[""]
+	  },
+	  "windows":
+	  {
+ 	   "CPP_ARGS":"",
+ 	   "CC_ARGS":"",
+ 	   "LD_ARGS":"",
+	    "src":[""],
+	    "include":[""]
+	  },
+	  "android":
+	  {
+ 	   "CPP_ARGS":"-DIDE_ANDROID -O2 -fsigned-char",
+ 	   "CC_ARGS":"-fexceptions -std=c++11",
+ 	   "LD_ARGS":"-lAGKBullet -lAGKAssimp -AGKCurl -landroid_native_app_glue -lm -llog -landroid -lEGL -lGLESv2 -lz -lOpenSLES",
+	    "src":[""],
+	    "include":[""]
+	  },
+	  "emscripten":
+	  {
+	   "template":"agkshell.html",
+ 	   "CPP_ARGS":"-DIDE_HTML5",
+ 	   "CC_ARGS":"-DIDE_HTML5",
+ 	   "LD_ARGS":"-s USE_GLFW=3 -s FULL_ES2=2 -s USE_SDL=2  -s DISABLE_EXCEPTION_CATCHING=0",
+	    "src":[""],
+	    "include":[""]
+	  }
+      }
+}  
+

@@ -1,0 +1,49 @@
+{
+	"module":"gameplay",
+	"about":"",
+	"author":"djokersoft",
+	"version":"1.0.0",
+	"depends":["lua","bullet","jpeg","png","vorbis","tinyxml2","zlib"],
+        "static":false,
+                    "priority":0,
+	"system":["linux","android","emscripten","windows"],
+	"src":[""],
+	"include":[""],
+   	"plataforms":
+	{
+	  "linux":
+	  {
+ 	   "CPP_ARGS":"-fPIC -D__linux__",
+ 	   "CC_ARGS":"-fPIC -D__linux__ ",
+ 	   "LD_ARGS":"-lgameplay -lfreetype -ljpeg -lGLEW  -lvorbis -ltinyxml2 -lbullet -lopenal -lpng -lzlib -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lharfbuzz -lfontconfig   -lGL -lXt -lX11 -lXxf86vm -lXrandr -lpthread -lm -lXi -lXinerama -lXcursor -ludev -ldl -no-pie",
+	   "src":[""],
+	   "include":[""]
+	  },
+	  "windows":
+	  {
+ 	   "CPP_ARGS":"",
+ 	   "CC_ARGS":"",
+ 	   "LD_ARGS":"",
+	    "src":[""],
+	    "include":[""]
+	  },
+	  "android":
+	  {
+ 	   "CPP_ARGS":"",
+ 	   "CC_ARGS":"",
+ 	   "LD_ARGS":"",
+	    "src":[""],
+	    "include":[""]
+	  },
+	  "emscripten":
+	  {
+	   "template":"",
+ 	   "CPP_ARGS":"",
+ 	   "CC_ARGS":"",
+ 	   "LD_ARGS":"",
+	    "src":[""],
+	    "include":[""]
+	  }
+      }
+}  
+
